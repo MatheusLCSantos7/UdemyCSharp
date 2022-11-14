@@ -1,51 +1,35 @@
 ﻿using System.Globalization;
+using System.Numerics;
+
 namespace primeiroprojeto
 {
     internal class program
     {
         static void Main(string[] args)
         {
-            //operadores (math.)
-            double duplo = 10.2342;
-            float b = (float)duplo;
-            int a = 5;
-            int c = 2;
-            double d = (double)a / c;
-            double raiz = Math.Sqrt(b);
-            double quadrado = Math.Pow(a, 2);
- 
-            Console.WriteLine(raiz);
-            Console.WriteLine(quadrado);
-            Console.WriteLine(d);
-            Console.WriteLine(b);
-            Console.WriteLine(duplo.ToString("F4",CultureInfo.InvariantCulture));
-
-            // entrada de dados 2
-
+            Console.WriteLine("Digite três números");
             int n1 = int.Parse(Console.ReadLine());
-            char nh = char.Parse(Console.ReadLine());
-            double n2 = double.Parse(Console.ReadLine(),CultureInfo.InvariantCulture);
+            int n2 = int.Parse(Console.ReadLine());
+            int n3 = int.Parse(Console.ReadLine());
 
-            string[] veti = Console.ReadLine().Split(' ');
-            string nome = veti[0];
-            char sexo = char.Parse(veti[1]);
-            int idade = int.Parse(veti[2]);
-            double altura = double.Parse(veti[3],CultureInfo.InvariantCulture);
+            double resultado = Maior(n1,n2,n3);
+            Console.WriteLine("Maior: " + resultado);
+        }
 
-            Console.WriteLine(n1);
-            Console.WriteLine(nh);
-            Console.WriteLine(n2.ToString("F2", CultureInfo.InvariantCulture));
-            Console.WriteLine(nome);
-            Console.WriteLine(sexo);
-            Console.WriteLine(idade);
-            Console.WriteLine(altura);
-
-            // operadores logicos e comparativos no capítulo
-            // if e else
-            //
-
-
-
+        static int Maior(int x1, int x2, int x3)
+        {
+            int m;
+            if (x1 > x2 && x1 > x3)
+            {
+                m = x1;
+            } else if (x2 > x3)
+            {
+                m = x2;
+            } else
+            {
+                m = x3;
+            }
+            return m;
         }
     }
 }
